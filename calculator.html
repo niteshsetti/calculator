@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculator</title>
+        <script src="angular.min.js"></script>
+        <script src="cal.js"></script>
+    </head>
+    <style>
+        table,tr,td{
+            border-collapse: collapse;
+            border:1px solid black;
+            margin-left:25em;
+            margin-top:5em;
+            padding-top: 2em;
+            background-color:violet;
+        }
+        tr,td{
+            border:none;
+            padding:3px;
+        }
+        
+        button{
+         color: black;
+         width:80px;
+         height:50px;
+         border-radius:3px;
+         background-color:white;
+         border-color:none;
+         font-size: 20px;
+         }
+         #b{
+             width:280px;
+             height:40px;
+             font-size:30px;
+             text-align: right;
+             padding:30px;
+             border:none;
+             outline:none;
+         }
+         #a{
+             width:336px;
+             font-size:30px;
+             border:none;
+             outline: none;
+         }
+    </style>
+    <body ng-app="myApp" ng-controller="myctl">
+        <table>
+            <tr>
+              <td colspan="4">
+                  <input type="text" ng-model="initial" ng-readonly="vars" id="b"><br>
+                  <input type="text" ng-model="final" ng-readonly="vars" id="a">
+                </td>
+            </tr>
+            <tr>
+                <td><button ng-click="per()">%</button></td>
+                <td><button ng-click="ce()">CE</button></td>
+                <td><button ng-click="c()">C</button></td>
+                <td><button ng-click="back()">X</button></td>
+            </tr>
+            <tr>
+                <td><button ng-click="ob()">1/x</button></td>
+                <td><button ng-click="pow()">x<sup>2</sup></button></td>
+                <td><button ng-click="sqr()"><sup>2</sup>&radic;x</button></td>
+                <td><button ng-click="get('/')">&divide;</button></td>
+            </tr>
+            <tr>
+                <td><button ng-click="get('7')">7</button></td>
+                <td><button ng-click="get('8')">8</button></td>
+                <td><button ng-click="get('9')">9</button></td>
+                <td><button ng-click="get('*')">X</button></td>
+            </tr>
+            <tr>
+                <td><button ng-click="get('4')">4</button></td>
+                <td><button ng-click="get('5')">5</button></td>
+                <td><button ng-click="get('6')">6</button></td>
+                <td><button ng-click="get('-')">-</button></td>
+            </tr>
+            <tr>
+                <td><button ng-click="get('1')">1</button></td>
+                <td><button ng-click="get('2')">2</button></td>
+                <td><button ng-click="get('3')">3</button></td>
+                <td><button ng-click="get('+')">+</button></td>
+            </tr>
+            <tr>
+                <td><button ng-click="get('+/-')">+/-</button></td>
+                <td><button ng-click="get('0')">0</button></td>
+                <td><button ng-click="get('.')">.</button></td>
+                <td><button ng-click="ope()">=</button></td>
+            </tr>
+        </table>
+    </body>
+</html>
